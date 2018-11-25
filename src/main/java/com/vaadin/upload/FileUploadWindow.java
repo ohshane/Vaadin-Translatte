@@ -12,9 +12,10 @@ public class FileUploadWindow extends Window {
         this.setModal(true);
 
         final VerticalLayout subContent = new VerticalLayout();
-        subContent.addComponent(new LangChooseBlock());
+        LangChooseBlock langChooseBlock = new LangChooseBlock();
+        subContent.addComponent(langChooseBlock);
 
-        final FileUploadBlock fileUploadBlock = new FileUploadBlock();
+        final FileUploadBlock fileUploadBlock = new FileUploadBlock(langChooseBlock);
 
         subContent.addComponent(fileUploadBlock);
         subContent.setComponentAlignment(fileUploadBlock, Alignment.BOTTOM_RIGHT);

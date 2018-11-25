@@ -1,5 +1,7 @@
-com\vaadin\FileUploadBlock.class
+com\vaadin\upload\FileUploadWindow.class
+com\vaadin\upload\Lang.class
 com\vaadin\MyUI$MyUIServlet.class
-com\vaadin\LangChooseBlock.class
+com\vaadin\upload\FileUploader.class
 com\vaadin\MyUI.class
-com\vaadin\FileUploadWindow.class
+com\vaadin\upload\LangChooseBlock.class
+com\vaadin\upload\FileUploadBlock.class

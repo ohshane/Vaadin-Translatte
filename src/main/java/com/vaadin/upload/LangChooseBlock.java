@@ -1,11 +1,16 @@
 package com.vaadin.upload;
 
 import com.vaadin.ui.*;
+import com.vaadin.ui.themes.ValoTheme;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LangChooseBlock extends VerticalLayout {
+    private ComboBox<Lang> source_lang;
+    private ComboBox<Lang> target_lang;
+    private List<Lang> langs;
+
     public LangChooseBlock() {
         setSizeFull();
         Component langChooseForm = langChooseForm();
@@ -20,8 +25,8 @@ public class LangChooseBlock extends VerticalLayout {
         langChoosePanel.setSizeUndefined();
         langChoosePanel.setSpacing(true);
 
-        List<Lang> langs = lang2List();
-        ComboBox<Lang> source_lang = new ComboBox<>("Source language", langs);
+        langs = lang2List();
+        source_lang = new ComboBox<>("Source language", langs);
         source_lang.setItemCaptionGenerator(Lang::getLanguageName);
         source_lang.setEmptySelectionAllowed(false);
         source_lang.addValueChangeListener(event -> {
@@ -30,7 +35,7 @@ public class LangChooseBlock extends VerticalLayout {
         });
         langChoosePanel.addComponent(source_lang);
 
-        ComboBox<Lang> target_lang = new ComboBox<>("Target language", langs);
+        target_lang = new ComboBox<>("Target language", langs);
         target_lang.setItemCaptionGenerator(Lang::getLanguageName);
         target_lang.setEmptySelectionAllowed(false);
         target_lang.addValueChangeListener(event -> {
@@ -40,6 +45,14 @@ public class LangChooseBlock extends VerticalLayout {
         langChoosePanel.addComponent(target_lang);
 
         return langChoosePanel;
+    }
+
+    public ComboBox<Lang> getSource_lang() {
+        return source_lang;
+    }
+
+    public ComboBox<Lang> getTarget_lang() {
+        return target_lang;
     }
 
     private List<Lang> lang2List() {
