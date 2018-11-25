@@ -62,14 +62,10 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
 
         if (! fileExtension.equals("srt")) {
             new Notification("Check file extension (only *.srt is allowed)",
-                    Notification.Type.ERROR_MESSAGE)
+                    Notification.Type.WARNING_MESSAGE)
                     .show(Page.getCurrent());
             upload.setVisible(true);
             progressBar.setVisible(false);
-
-            Label fileLabel = new Label(fileName);
-            fileLabel.addStyleNames(ValoTheme.LABEL_FAILURE);
-            this.addComponent(fileLabel);
 
             this.fileName = "";
             return null;
@@ -82,17 +78,13 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
             file = new File("tmp/" + fileName);
             fos = new FileOutputStream(file);
         } catch (final java.io.FileNotFoundException e) {
-            new Notification("Could not open file",
+            new Notification("Upload unsuccessful",
                     e.getMessage(),
                     Notification.Type.ERROR_MESSAGE)
                     .show(Page.getCurrent());
 
             upload.setVisible(true);
             progressBar.setVisible(false);
-
-            Label fileLabel = new Label(fileName);
-            fileLabel.addStyleNames(ValoTheme.LABEL_FAILURE);
-            this.addComponent(fileLabel);
 
             this.fileName = "";
             return null;
