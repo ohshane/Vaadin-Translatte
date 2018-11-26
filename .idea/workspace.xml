@@ -7,7 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ee10e7f-384d-41a2-9f08-c1119137c09e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vaadin/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vaadin/upload/FileUploader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vaadin/upload/FileUploader.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,7 +43,7 @@
       <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/MyUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
+            <state relative-caret-position="858">
               <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,23 +73,29 @@
       <file leaf-file-name="LangChooseBlock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/upload/LangChooseBlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
+            <state relative-caret-position="726">
               <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-              <folding>
-                <element signature="e#1629#1630#0" expanded="true" />
-                <element signature="e#1685#1686#0" expanded="true" />
-                <element signature="e#1723#1724#0" expanded="true" />
-                <element signature="e#1779#1780#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUploader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FileUploader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+            <state relative-caret-position="577">
+              <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBConnect.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/DBConnect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,6 +148,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploadWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vaadin/upload/LangChooseBlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vaadin/DBConnenct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/vaadin/DBConnect.java" />
       </list>
     </option>
   </component>
@@ -185,11 +196,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-368" />
-    <option name="width" value="2576" />
-    <option name="height" value="1426" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1913" />
+    <option name="y" value="-360" />
+    <option name="width" value="1294" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -197,13 +208,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Vaadin-Translatte" type="b2602c69:ProjectViewProjectNode" />
               <item name="Vaadin-Translatte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vaadin-Translatte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vaadin-Translatte" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Vaadin-Translatte" type="b2602c69:ProjectViewProjectNode" />
@@ -286,11 +301,16 @@
               <item name="Vaadin-Translatte" type="462c0819:PsiDirectoryNode" />
               <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Vaadin-Translatte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -299,13 +319,13 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/mysql-connector-java-8.0.13.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.6908046" />
     <property name="settings.editor.selected.configurable" value="debugger.hotswap" />
   </component>
   <component name="RunDashboard">
@@ -320,7 +340,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DBConnect">
+    <configuration name="DBConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.DBConnect" />
+      <module name="Vaadin-Translatte" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="DBConnenct" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.vaadin.DBConnenct" />
+      <module name="Vaadin-Translatte" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vaadin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -432,6 +474,17 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 8.5.33" />
+      <item itemvalue="Application.DBConnenct" />
+      <item itemvalue="Application.DBConnect" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DBConnect" />
+        <item itemvalue="Application.DBConnenct" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -462,21 +515,23 @@
       <workItem from="1542543625756" duration="1245000" />
       <workItem from="1542595101896" duration="127000" />
       <workItem from="1542599630052" duration="953000" />
-      <workItem from="1543129186683" duration="11971000" />
+      <workItem from="1543129186683" duration="13387000" />
+      <workItem from="1543207739174" duration="629000" />
+      <workItem from="1543232893522" duration="3248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73884000" />
+    <option name="totallyTimeSpent" value="79177000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-368" width="2576" height="1426" extended-state="6" />
+    <frame x="1913" y="-360" width="1294" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32944834" />
-      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.16891892" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.22654584" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -492,9 +547,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32944834" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27972028" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32944834" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994206" visible="true" weight="0.12281399" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28169015" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4573894" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4994206" weight="0.6969206" />
       <window_info id="Web" order="2" sideWeight="0.50057936" side_tool="true" weight="0.12281399" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -572,16 +627,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/MyUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploadBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -784,13 +829,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/VAADIN/themes/mytheme/styles.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/LangChoose.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/CountryData.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/Test.java" />
@@ -843,14 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/upload/LangChooseBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
+        <state relative-caret-position="726">
           <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
-          <folding>
-            <element signature="e#1629#1630#0" expanded="true" />
-            <element signature="e#1685#1686#0" expanded="true" />
-            <element signature="e#1723#1724#0" expanded="true" />
-            <element signature="e#1779#1780#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,7 +895,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
+        <state relative-caret-position="858">
           <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -880,8 +912,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/upload/FileUploader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
+        <state relative-caret-position="577">
+          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="155" column="47" selection-start-line="155" selection-start-column="47" selection-end-line="155" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/vaadin/DBConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,8 +992,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
-                <option value="0.6" />
+                <option value="0.6908046" />
               </list>
             </option>
           </splitter-proportions>
@@ -968,7 +1016,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.6908046" />
               </list>
             </option>
           </splitter-proportions>
