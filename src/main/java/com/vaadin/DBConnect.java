@@ -40,9 +40,32 @@ public class DBConnect {
         }
     }
 
+    public void addData() {
+        try {
+            String query = "INSERT INTO translatte.sourcefilegeneral (fileName, sourceLang, targetLang) VALUES ('test4.srt', 'en', 'ja')";
+            statement.execute(query);
+
+            query = "SELECT * FROM translatte.sourcefilegeneral";
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String fileName = resultSet.getString("fileName");
+                String sourceLang = resultSet.getString("sourceLang");
+                String targetLang = resultSet.getString("targetLang");
+
+                System.out.printf("%s %s %s %s\n", id, fileName, sourceLang, targetLang);
+            }
+
+        } catch (Exception e) {
+            System.out.println("1>>" + e.fillInStackTrace());
+        }
+    }
+
     public static void main(String[] args) {
         DBConnect connect = new DBConnect();
-        connect.getData();
+        connect.addData();
+
     }
 
 }
