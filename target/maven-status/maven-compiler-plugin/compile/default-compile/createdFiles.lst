@@ -1,4 +1,5 @@
 com\vaadin\upload\FileUploadWindow.class
+com\vaadin\db\DBConnect.class
 com\vaadin\upload\Lang.class
 com\vaadin\MyUI$MyUIServlet.class
 com\vaadin\upload\FileUploader.class

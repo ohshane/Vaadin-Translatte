@@ -1,5 +1,6 @@
 package com.vaadin.upload;
 
+import com.vaadin.DBConnect;
 import com.vaadin.server.Page;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
@@ -14,8 +15,9 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
     private ProgressBar progressBar;
     private String fileName = "";
     private LangChooseBlock langChooseBlock;
-    private boolean lang1Empty = true;
-    private boolean lang2Empty = true;
+    private String lang1 = "";
+    private String lang2 = "";
+    private FileOutputStream fos;
 
     public FileUploader(LangChooseBlock langChooseBlock) {
         this.langChooseBlock = langChooseBlock;
@@ -26,15 +28,17 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
         upload.setVisible(false);
 
         this.langChooseBlock.getSource_lang().addValueChangeListener(event -> {
-            lang1Empty = event.getSource().isEmpty();
-            if (!lang1Empty && !lang2Empty) {
+            lang1 = event.getValue().getLanguageCode();
+            if (!lang1.equals("") && !lang2.equals("")) {
+                System.out.printf("languageCode : (%s, %s)\n", lang1, lang2);
                 upload.setVisible(true);
             }
         });
 
         this.langChooseBlock.getTarget_lang().addValueChangeListener(event -> {
-            lang2Empty = event.getSource().isEmpty();
-            if (!lang1Empty && !lang2Empty) {
+            lang2 = event.getValue().getLanguageCode();
+            if (!lang1.equals("") && !lang2.equals("")) {
+                System.out.printf("languageCode : (%s, %s)\n", lang1, lang2);
                 upload.setVisible(true);
             }
         });
@@ -52,6 +56,7 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
 
     @Override
     public OutputStream receiveUpload(String fileName, String mimeType) {
+        fos = null;
         this.fileName = fileName;
 
         upload.setVisible(false);
@@ -72,7 +77,7 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
         }
 
         // Create upload stream
-        FileOutputStream fos; // Stream to write to
+        // Stream to write to - fos
         try {
             // Open the file for writing.
             file = new File("tmp/" + fileName);
@@ -86,14 +91,17 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
             upload.setVisible(true);
             progressBar.setVisible(false);
 
-            this.fileName = "";
             return null;
         }
+        System.out.println(fos.toString());
         return fos; // Return the output stream to write to
     }
 
     @Override
     public void uploadSucceeded(Upload.SucceededEvent succeededEvent) {
+        DBConnect db = new DBConnect("sourcefilegeneral");
+        db.addSourceData(fileName, lang1, lang2, fos.toString());
+
         upload.setVisible(true);
         progressBar.setVisible(false);
         Label fileLabel = new Label(String.format("%s │ %d KB", fileName, file.length()/1024));
@@ -102,6 +110,8 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
         new Notification("Upload completed",
                 null,
                 Notification.Type.HUMANIZED_MESSAGE).show(Page.getCurrent());
+
+        this.fileName = "";
     }
 
 }
