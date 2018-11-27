@@ -5,9 +5,8 @@ import com.vaadin.server.Page;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.util.Scanner;
 
 public class FileUploader extends VerticalLayout implements Upload.Receiver, Upload.SucceededListener {
     private File file;
@@ -17,7 +16,6 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
     private LangChooseBlock langChooseBlock;
     private String lang1 = "";
     private String lang2 = "";
-    private FileOutputStream fos;
 
     public FileUploader(LangChooseBlock langChooseBlock) {
         this.langChooseBlock = langChooseBlock;
@@ -56,7 +54,6 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
 
     @Override
     public OutputStream receiveUpload(String fileName, String mimeType) {
-        fos = null;
         this.fileName = fileName;
 
         upload.setVisible(false);
@@ -78,10 +75,13 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
 
         // Create upload stream
         // Stream to write to - fos
+        FileOutputStream fos;
         try {
             // Open the file for writing.
             file = new File("tmp/" + fileName);
+
             fos = new FileOutputStream(file);
+
         } catch (final java.io.FileNotFoundException e) {
             new Notification("Upload unsuccessful",
                     e.getMessage(),
@@ -93,14 +93,28 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
 
             return null;
         }
-        System.out.println(fos.toString());
+
         return fos; // Return the output stream to write to
     }
 
     @Override
     public void uploadSucceeded(Upload.SucceededEvent succeededEvent) {
+        FileReader fileReader;
+        StringBuffer sb = new StringBuffer();
+
+        try {
+            fileReader = new FileReader(file);
+            Scanner scanner = new Scanner(fileReader);
+            while (scanner.hasNextLine()) {
+                sb.append(scanner.nextLine());
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         DBConnect db = new DBConnect("sourcefilegeneral");
-        db.addSourceData(fileName, lang1, lang2, fos.toString());
+        db.addSourceData(fileName, lang1, lang2, sb.toString());
 
         upload.setVisible(true);
         progressBar.setVisible(false);
@@ -112,6 +126,8 @@ public class FileUploader extends VerticalLayout implements Upload.Receiver, Upl
                 Notification.Type.HUMANIZED_MESSAGE).show(Page.getCurrent());
 
         this.fileName = "";
+        System.out.println(sb.toString());
+        sb.setLength(0);
     }
 
 }
